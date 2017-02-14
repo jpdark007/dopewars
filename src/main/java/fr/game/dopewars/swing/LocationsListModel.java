@@ -2,8 +2,8 @@ package fr.game.dopewars.swing;
 
 import javax.swing.AbstractListModel;
 import javax.swing.ComboBoxModel;
-import tradewars.Game;
-import tradewars.Location;
+import fr.game.dopewars.Game;
+import fr.game.dopewars.Location;
 
 /**
  * Manages the locations table list

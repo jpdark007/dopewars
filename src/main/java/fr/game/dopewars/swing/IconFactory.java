@@ -3,7 +3,7 @@ package fr.game.dopewars.swing;
 import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import tradewars.Product;
+import fr.game.dopewars.Product;
 
 /**
  * Manages the icons for the swing application

@@ -1,8 +1,8 @@
 package fr.game.dopewars.swing;
 
 import javax.swing.table.AbstractTableModel;
-import tradewars.Game;
-import tradewars.Product;
+import fr.game.dopewars.Game;
+import fr.game.dopewars.Product;
 
 /**
  * Handles the products table list of products

@@ -1,14 +1,28 @@
 package fr.game.dopewars.swing;
 
 import java.awt.Color;
-import java.awt.KeyboardFocusManager;
-import tradewars.exceptions.*;
-import java.text.ParseException;
-import javax.swing.JOptionPane;
 import java.awt.KeyEventDispatcher;
+import java.awt.KeyboardFocusManager;
 import java.awt.event.KeyEvent;
-import tradewars.*;
-import tradewars.events.*;
+import java.text.ParseException;
+
+import javax.swing.JOptionPane;
+
+import fr.game.dopewars.Fight;
+import fr.game.dopewars.Fighter;
+import fr.game.dopewars.Game;
+import fr.game.dopewars.Location;
+import fr.game.dopewars.Message;
+import fr.game.dopewars.Npc;
+import fr.game.dopewars.Player;
+import fr.game.dopewars.Product;
+import fr.game.dopewars.Trade;
+import fr.game.dopewars.events.Event;
+import fr.game.dopewars.exceptions.CannotAffordException;
+import fr.game.dopewars.exceptions.GameOverException;
+import fr.game.dopewars.exceptions.InvalidTradeException;
+import fr.game.dopewars.exceptions.OutOfSpaceException;
+import fr.game.dopewars.exceptions.QuantityOutOfBoundsException;
 
 /**
  * Main app that ties together tradewars with swing
@@ -127,7 +141,7 @@ public class TradeWars extends javax.swing.JFrame {
     logPanel = new javax.swing.JPanel();
     jLabel1 = new javax.swing.JLabel();
     gameMessagesScrollPane = new javax.swing.JScrollPane();
-    gameMessages = new tradewars.swing.ColorTextPane();
+    gameMessages = new fr.game.dopewars.swing.ColorTextPane();
     staticProductsLabel = new javax.swing.JLabel();
     staticStashLabel = new javax.swing.JLabel();
     productPanelBG = new javax.swing.JLabel();
@@ -393,7 +407,7 @@ public class TradeWars extends javax.swing.JFrame {
 
     currentLocation.setFont(new java.awt.Font("Helvetica", 0, 13));
     currentLocation.setForeground(new java.awt.Color(51, 51, 51));
-    currentLocation.setModel(new tradewars.swing.LocationsListModel());
+    currentLocation.setModel(new fr.game.dopewars.swing.LocationsListModel());
     currentLocation.setSelectedItem(currentLocation.getSelectedItem());
     currentLocation.setPreferredSize(new java.awt.Dimension(150, 27));
     currentLocation.addActionListener(new java.awt.event.ActionListener() {
@@ -558,7 +572,7 @@ public class TradeWars extends javax.swing.JFrame {
     gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
     gamePanelWrapper.add(staticStashScrollPane, gridBagConstraints);
 
-    productsTable.setModel(new tradewars.swing.ProductsTableModel());
+    productsTable.setModel(new fr.game.dopewars.swing.ProductsTableModel());
     productsTable.setGridColor(new java.awt.Color(204, 204, 204));
     productsTable.setRowHeight(20);
     productsTable.setShowGrid(true);
@@ -830,7 +844,7 @@ public class TradeWars extends javax.swing.JFrame {
   private javax.swing.JButton fightButton;
   private javax.swing.JDialog fightDialog;
   private javax.swing.JLabel gameLogButton;
-  private tradewars.swing.ColorTextPane gameMessages;
+  private fr.game.dopewars.swing.ColorTextPane gameMessages;
   private javax.swing.JScrollPane gameMessagesScrollPane;
   private javax.swing.JPanel gamePanelWrapper;
   private javax.swing.JProgressBar healthMeter;

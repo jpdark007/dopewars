@@ -3,8 +3,8 @@ package fr.game.dopewars.swing;
 import java.util.ArrayList;
 import java.util.Map;
 import javax.swing.table.AbstractTableModel;
-import tradewars.Game;
-import tradewars.Product;
+import fr.game.dopewars.Game;
+import fr.game.dopewars.Product;
 
 /**
  * Handles the stash table list of products

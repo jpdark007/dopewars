@@ -4,7 +4,7 @@ import java.awt.Component;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
-import tradewars.Product;
+import fr.game.dopewars.Product;
 
 /**
  * Handles rendering the product icons and table cells
