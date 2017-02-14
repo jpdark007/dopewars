@@ -2,6 +2,7 @@ Java Tradewars
 =============
 
 [![Build Status](https://travis-ci.org/jpdark007/dopewars.svg?branch=master)](https://travis-ci.org/jpdark007/dopewars)
+[![codecov.io](https://codecov.io/github/dopewars/bankio/coverage.svg?branch=master)](https://codecov.io/github/jpdark007/dopewars?branch=master)
 [![License](https://img.shields.io/hexpm/l/plug.svg)](https://raw.githubusercontent.com/jpdark007/dopewars/master/LICENSE)
 
 Java Tradewars is a generic dopewars-like engine that can be easily re-themed. There is no XML (thank god) to configure, just straight java. This project is themed
