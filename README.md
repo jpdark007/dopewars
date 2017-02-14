@@ -9,13 +9,7 @@ I tried to keep the tradewars package outside of swing where I could, so it can 
 Screenshots
 -----------
 
-![Tradewars](http://0rcus.com/i/tradewars/tradewars-1.png "TradeWars")
-
-![Tradewars Event](http://0rcus.com/i/tradewars/tradewars-4.png "TradeWars - Event")
-
-![Tradewars Fight](http://0rcus.com/i/tradewars/tradewars-2.png "TradeWars - Fight!")
-
-![Tradewars Trade](http://0rcus.com/i/tradewars/tradewars-3.png "TradeWars - Trade")
+![Tradewars](https://cloud.githubusercontent.com/assets/16048491/22925344/9d5ab36c-f2a8-11e6-8487-aa629cc52bdb.PNG "TradeWars")
 
 Customization
 -------------
