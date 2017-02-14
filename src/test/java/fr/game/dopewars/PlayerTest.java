@@ -1,14 +1,25 @@
 package fr.game.dopewars;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.BeforeClass;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class PlayerTest {
 	
-	private static fr.game.dopewars.Player player;
+	private static Player player;
 
+	@BeforeClass
+	public static void onceExecutedBeforeAll() {
+		player = new Player("test");
+	}
+	
 	@Test
-	public void testTotal() {
+	public void testCash() {
 		assertEquals(TraderConstants.STARTING_CASH, player.getCash());
+	}
+	
+	@Test
+	public void testHealth() {
+		assertEquals(TraderConstants.STARTING_HEALTH, player.getHealth());
 	}
 }
