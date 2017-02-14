@@ -1,4 +1,4 @@
-package tradewars.exceptions;
+package fr.game.dopewars.exceptions;
 
 /**
  * Raised when the user is out of space

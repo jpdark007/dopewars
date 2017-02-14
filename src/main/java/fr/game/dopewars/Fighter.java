@@ -1,5 +1,4 @@
-package tradewars;
-
+package fr.game.dopewars;
 /**
  * Simple interface to a class to be "fightable"
  */

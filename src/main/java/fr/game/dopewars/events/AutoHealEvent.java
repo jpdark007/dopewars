@@ -1,7 +1,7 @@
-package tradewars.events;
+package fr.game.dopewars.events;
 
-import tradewars.Game;
-import tradewars.Message;
+import fr.game.dopewars.Game;
+import fr.game.dopewars.Message;
 
 /**
  * Simple event that will heal the user a small amount when they switch places

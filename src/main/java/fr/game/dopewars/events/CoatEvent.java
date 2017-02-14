@@ -1,8 +1,8 @@
-package tradewars.events;
+package fr.game.dopewars.events;
 
-import tradewars.Game;
-import tradewars.Message;
-import tradewars.Player;
+import fr.game.dopewars.Game;
+import fr.game.dopewars.Message;
+import fr.game.dopewars.Player;
 
 /**
  * Event to handle if the user wants to upgrade their coat and gain more space

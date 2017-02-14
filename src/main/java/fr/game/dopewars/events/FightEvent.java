@@ -1,8 +1,8 @@
-package tradewars.events;
+package fr.game.dopewars.events;
 
-import tradewars.Fight;
-import tradewars.Game;
-import tradewars.Message;
+import fr.game.dopewars.Fight;
+import fr.game.dopewars.Game;
+import fr.game.dopewars.Message;
 
 /**
  * Event to handle if fights are to pop up

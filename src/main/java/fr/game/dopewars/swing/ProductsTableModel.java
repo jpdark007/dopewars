@@ -1,4 +1,4 @@
-package tradewars.swing;
+package fr.game.dopewars.swing;
 
 import javax.swing.table.AbstractTableModel;
 import tradewars.Game;

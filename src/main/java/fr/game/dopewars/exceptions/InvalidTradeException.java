@@ -1,4 +1,4 @@
-package tradewars.exceptions;
+package fr.game.dopewars.exceptions;
 
 /**
  * Raised when a trade is invalid. e.g.: less than 1 quantity

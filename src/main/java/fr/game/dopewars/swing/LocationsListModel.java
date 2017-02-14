@@ -1,4 +1,4 @@
-package tradewars.swing;
+package fr.game.dopewars.swing;
 
 import javax.swing.AbstractListModel;
 import javax.swing.ComboBoxModel;

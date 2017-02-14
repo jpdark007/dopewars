@@ -1,4 +1,4 @@
-package tradewars.swing;
+package fr.game.dopewars.swing;
 
 import java.util.ArrayList;
 import java.util.Map;

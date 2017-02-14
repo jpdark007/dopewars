@@ -1,7 +1,7 @@
-package tradewars.events;
+package fr.game.dopewars.events;
 
-import tradewars.Game;
-import tradewars.Message;
+import fr.game.dopewars.Game;
+import fr.game.dopewars.Message;
 
 /**
  * Event to aks the user if they want to upgrade their weapon

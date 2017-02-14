@@ -1,8 +1,8 @@
-package tradewars.events;
+package fr.game.dopewars.events;
 
-import tradewars.Game;
-import tradewars.Message;
-import tradewars.Product;
+import fr.game.dopewars.Game;
+import fr.game.dopewars.Message;
+import fr.game.dopewars.Product;
 
 /**
  * Event to randomly award the user a random product

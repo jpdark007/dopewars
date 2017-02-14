@@ -1,4 +1,4 @@
-package tradewars;
+package fr.game.dopewars;
 
 /**
  * Holds information about the location. Whats for sale, etc.

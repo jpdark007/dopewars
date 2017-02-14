@@ -1,4 +1,4 @@
-package tradewars;
+package fr.game.dopewars;
 
 /**
  * Class to hold the fight and NPC iformation 

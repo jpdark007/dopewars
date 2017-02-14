@@ -1,9 +1,9 @@
-package tradewars;
+package fr.game.dopewars;
 
-import tradewars.exceptions.CannotAffordException;
-import tradewars.exceptions.QuantityOutOfBoundsException;
-import tradewars.exceptions.InvalidTradeException;
-import tradewars.exceptions.OutOfSpaceException;
+import fr.game.dopewars.exceptions.CannotAffordException;
+import fr.game.dopewars.exceptions.QuantityOutOfBoundsException;
+import fr.game.dopewars.exceptions.InvalidTradeException;
+import fr.game.dopewars.exceptions.OutOfSpaceException;
 
 /**
  * Holds state for the current trade

@@ -1,4 +1,4 @@
-package tradewars.exceptions;
+package fr.game.dopewars.exceptions;
 
 /**
  * Raised from trades where the user cannot afford what they want to buy

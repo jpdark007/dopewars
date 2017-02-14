@@ -1,6 +1,6 @@
-package tradewars;
+package fr.game.dopewars;
 
-import tradewars.exceptions.*;
+import fr.game.dopewars.exceptions.*;
 import java.util.*;
 
 /**

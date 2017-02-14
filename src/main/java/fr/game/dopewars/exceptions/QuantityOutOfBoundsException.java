@@ -1,4 +1,4 @@
-package tradewars.exceptions;
+package fr.game.dopewars.exceptions;
 
 /**
  * Raise when the quantity exceeds the allowed space

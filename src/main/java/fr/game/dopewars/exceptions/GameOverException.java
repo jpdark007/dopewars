@@ -1,4 +1,4 @@
-package tradewars.exceptions;
+package fr.game.dopewars.exceptions;
 
 /**
  * Raised on game over event

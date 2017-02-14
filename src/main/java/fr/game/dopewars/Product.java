@@ -1,4 +1,4 @@
-package tradewars;
+package fr.game.dopewars;
 
 /**
  * Holds product state

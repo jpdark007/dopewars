@@ -1,4 +1,4 @@
-package tradewars.swing;
+package fr.game.dopewars.swing;
 
 import java.net.URL;
 import javax.swing.ImageIcon;

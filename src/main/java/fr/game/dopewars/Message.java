@@ -1,5 +1,4 @@
-package tradewars;
-
+package fr.game.dopewars;
 import java.awt.Color;
 
 /**

@@ -1,7 +1,6 @@
-package tradewars;
-
-import tradewars.events.*;
-import tradewars.exceptions.*;
+package fr.game.dopewars;
+import fr.game.dopewars.events.*;
+import fr.game.dopewars.exceptions.*;
 import java.util.*;
 
 /**

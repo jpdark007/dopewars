@@ -1,9 +1,9 @@
-package tradewars.events;
+package fr.game.dopewars.events;
 
-import tradewars.Game;
-import tradewars.Message;
-import tradewars.Player;
-import tradewars.TraderConstants;
+import fr.game.dopewars.Game;
+import fr.game.dopewars.Message;
+import fr.game.dopewars.Player;
+import fr.game.dopewars.TraderConstants;
 
 /**
  * Handles the event where we ask the user if they want to upgrade their armor
