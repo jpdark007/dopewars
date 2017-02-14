@@ -155,7 +155,7 @@ public class TradeWars extends javax.swing.JFrame {
     tradeTitle.setBackground(new java.awt.Color(255, 255, 255));
     tradeTitle.setFont(new java.awt.Font("Helvetica", 1, 24));
     tradeTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    tradeTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tradewars/resources/trade.png"))); // NOI18N
+    tradeTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/trade.png"))); // NOI18N
     tradeTitle.setText("Lets Make A Trade");
     tradeTitle.setIconTextGap(10);
     tradeTitle.setOpaque(true);
@@ -281,7 +281,7 @@ public class TradeWars extends javax.swing.JFrame {
     jLabel3.setBackground(new java.awt.Color(255, 255, 255));
     jLabel3.setFont(new java.awt.Font("Helvetica", 1, 24));
     jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tradewars/resources/fight.png"))); // NOI18N
+    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fight.png"))); // NOI18N
     jLabel3.setText("Lets Get It On!");
     jLabel3.setIconTextGap(10);
     jLabel3.setOpaque(true);
@@ -387,7 +387,7 @@ public class TradeWars extends javax.swing.JFrame {
 
     cashLabel.setFont(new java.awt.Font("Helvetica", 1, 24));
     cashLabel.setForeground(new java.awt.Color(51, 153, 0));
-    cashLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tradewars/resources/money.png"))); // NOI18N
+    cashLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/money.png"))); // NOI18N
     cashLabel.setText("$0.00");
     cashLabel.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
     cashLabel.setFocusTraversalKeysEnabled(false);
@@ -425,7 +425,7 @@ public class TradeWars extends javax.swing.JFrame {
 
     profitLabel.setFont(new java.awt.Font("Lucida Grande", 0, 12));
     profitLabel.setForeground(new java.awt.Color(153, 153, 153));
-    profitLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tradewars/resources/plus.png"))); // NOI18N
+    profitLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/plus.png"))); // NOI18N
     profitLabel.setText("$0.00");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
@@ -433,7 +433,7 @@ public class TradeWars extends javax.swing.JFrame {
     gridBagConstraints.insets = new java.awt.Insets(0, 50, 0, 0);
     playerPanel.add(profitLabel, gridBagConstraints);
 
-    gameLogButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tradewars/resources/log.png"))); // NOI18N
+    gameLogButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/log.png"))); // NOI18N
     gameLogButton.setToolTipText("Show Game Log");
     gameLogButton.addMouseListener(new java.awt.event.MouseAdapter() {
       public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -452,7 +452,7 @@ public class TradeWars extends javax.swing.JFrame {
     gridBagConstraints.weighty = 1.0;
     playerPanelWrapper.add(playerPanel, gridBagConstraints);
 
-    playerPanelBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tradewars/resources/bg-player.jpg"))); // NOI18N
+    playerPanelBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg-player.jpg"))); // NOI18N
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
     gridBagConstraints.gridy = 0;
@@ -495,7 +495,7 @@ public class TradeWars extends javax.swing.JFrame {
     gridBagConstraints.weightx = 1.0;
     statusPanel.add(spaceMeter, gridBagConstraints);
 
-    timeLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tradewars/resources/time.png"))); // NOI18N
+    timeLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/time.png"))); // NOI18N
     timeLabel.setToolTipText("Time Left");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 4;
@@ -504,7 +504,7 @@ public class TradeWars extends javax.swing.JFrame {
     gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 10);
     statusPanel.add(timeLabel, gridBagConstraints);
 
-    jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tradewars/resources/heart.png"))); // NOI18N
+    jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/heart.png"))); // NOI18N
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 2;
     gridBagConstraints.gridy = 0;
@@ -518,7 +518,7 @@ public class TradeWars extends javax.swing.JFrame {
     gridBagConstraints.weightx = 1.0;
     statusPanel.add(healthMeter, gridBagConstraints);
 
-    spaceLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tradewars/resources/space_empty.png"))); // NOI18N
+    spaceLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/space_empty.png"))); // NOI18N
     spaceLabel.setToolTipText("Space Available");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
@@ -534,7 +534,7 @@ public class TradeWars extends javax.swing.JFrame {
     gridBagConstraints.weightx = 1.0;
     statusPanelWrapper.add(statusPanel, gridBagConstraints);
 
-    statusBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tradewars/resources/bg-status.png"))); // NOI18N
+    statusBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg-status.png"))); // NOI18N
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
     gridBagConstraints.gridy = 0;
@@ -598,7 +598,7 @@ public class TradeWars extends javax.swing.JFrame {
 
     jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18));
     jLabel1.setForeground(new java.awt.Color(204, 204, 204));
-    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tradewars/resources/log.png"))); // NOI18N
+    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/log.png"))); // NOI18N
     jLabel1.setText("Game Log");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
@@ -636,7 +636,7 @@ public class TradeWars extends javax.swing.JFrame {
 
     staticProductsLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18));
     staticProductsLabel.setForeground(new java.awt.Color(204, 204, 204));
-    staticProductsLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tradewars/resources/purple-dot.png"))); // NOI18N
+    staticProductsLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/purple-dot.png"))); // NOI18N
     staticProductsLabel.setText("Products");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -645,7 +645,7 @@ public class TradeWars extends javax.swing.JFrame {
 
     staticStashLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18));
     staticStashLabel.setForeground(new java.awt.Color(204, 204, 204));
-    staticStashLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tradewars/resources/purple-dot.png"))); // NOI18N
+    staticStashLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/purple-dot.png"))); // NOI18N
     staticStashLabel.setLabelFor(stashTable);
     staticStashLabel.setText("Stash");
     staticStashLabel.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -656,7 +656,7 @@ public class TradeWars extends javax.swing.JFrame {
     gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 10);
     gamePanelWrapper.add(staticStashLabel, gridBagConstraints);
 
-    productPanelBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tradewars/resources/bg-application.png"))); // NOI18N
+    productPanelBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg-application.png"))); // NOI18N
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
     gridBagConstraints.gridy = 0;
@@ -718,10 +718,10 @@ public class TradeWars extends javax.swing.JFrame {
 
           long profit = (trade.getProduct().getPrice() - price) * quantity;
           if (profit > 0) {
-            profitLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tradewars/resources/plus.png")));
+            profitLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/plus.png")));
             c = Game.PROFITED_COLOR;
           } else {
-            profitLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tradewars/resources/minus.png")));
+            profitLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minus.png")));
             c = Game.LOST_COLOR;
 
           }

@@ -50,7 +50,7 @@ public class Product implements TraderConstants {
 
   @Override
   public String toString() {
-    return getName();
+    return getName() + " "+ getPriceValue();
   }
 
   final public void updatePrice() {
