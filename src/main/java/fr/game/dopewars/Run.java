@@ -2,6 +2,7 @@ package fr.game.dopewars;
 
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
@@ -42,7 +43,7 @@ public class Run {
 			} else if (userGuess.equals("0")) {
 				game.printBoard();
 			} else if (userGuess.equals("q")) {
-				stdin.close();
+//				stdin.close();
 				break;
 			}
 		}
@@ -62,7 +63,7 @@ public class Run {
 			handleGameEvents();
 		}
 
-		stdin.close();
+//		stdin.close();
 	}
 
 	private static void buyProduct() {
@@ -82,12 +83,12 @@ public class Run {
 
 		game.setCurrentTrade(trade);
 
-		int quantity = quantityAsk > trade.getMax() ? trade.getMax() : quantityAsk;
-		trade.setQuantity(quantity);
+//		int quantity = quantityAsk > trade.getMax() ? trade.getMax() : quantityAsk;
+		trade.setQuantity(quantityAsk);
 		try {
 			trade.commit();
 
-			String logMsg = String.format("You bought %d \u00D7 %s at %s!", quantity, trade.getProduct().getName(),
+			String logMsg = String.format("You bought %d \u00D7 %s at %s!", quantityAsk, trade.getProduct().getName(),
 					Game.CURRENCY_FORMATTER.format(trade.getPrice()));
 			logMessage(logMsg);
 		} catch (OutOfSpaceException ex) {
@@ -101,6 +102,7 @@ public class Run {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	private static void sellProduct() {
 		// SELL
 		Scanner stdin = new Scanner(System.in);
@@ -110,25 +112,54 @@ public class Run {
 		int productAsk = stdin.nextInt();
 		System.out.println("Quantity ? : ");
 		int quantityAsk = stdin.nextInt();
-		Product product = (Product) game.getPlayer().getProducts().values().toArray()[productAsk];
+		
+		//Find choosen product in stash
+		
+		Map<Product, Map<Long, Integer>> map = game.getPlayer().getProducts();
+		int i = 0;
+		Product product = null;
+		long buyingPrice = 1L;
+//		int quantity = 0;
+		search: for (Map.Entry<Product, Map<Long, Integer>> entry : map.entrySet()) {
+			Map<Long, Integer> stock = entry.getValue();
+			for (Entry<Long, Integer> oneProduct : stock.entrySet()) {
+				if (i == productAsk) {
+					product = entry.getKey();
+					buyingPrice = oneProduct.getKey();
+//					quantity = oneProduct.getValue();
+					break search;
+				}
+				++i;
+			}
+		}
 
-		Trade trade = new Trade(product, product.getPrice());
+		Trade trade = new Trade(product, buyingPrice);
 
 		trade.setMode(Trade.Mode.SELL);
-		trade.setMax(game.getPlayer().getMaxPurchase(product));
+		trade.setMax(game.getPlayer().quantityForProduct(product, buyingPrice));
 		game.setCurrentTrade(trade);
 
-		int quantity = quantityAsk > trade.getMax() ? trade.getMax() : quantityAsk;
+		trade.setQuantity(quantityAsk);
+		try {
+			trade.commit();
 
-		long price = trade.getPrice();
-		long salePrice = price * quantity;
-
-		long profit = (trade.getProduct().getPrice() - price) * quantity;
-		String logMsg = String.format("You sold %d \u00D7 %s for %s, making %s!", quantity,
-				trade.getProduct().getName(), Game.CURRENCY_FORMATTER.format(salePrice),
-				Game.CURRENCY_FORMATTER.format(profit));
-		logMessage(logMsg);
-		stdin.close();
+			long price = trade.getPrice();
+			long salePrice = price * quantityAsk;
+			long profit = (trade.getProduct().getPrice() - price) * quantityAsk;
+			
+			String logMsg = String.format("You sold %d \u00D7 %s for %s, making %s!", quantityAsk,
+					trade.getProduct().getName(), Game.CURRENCY_FORMATTER.format(salePrice),
+					Game.CURRENCY_FORMATTER.format(profit));
+			logMessage(logMsg);
+		} catch (OutOfSpaceException ex) {
+			logMessage("You cannot fit this many in your coat!");
+		} catch (CannotAffordException ex) {
+			logMessage("You cannot afford this many!");
+		} catch (QuantityOutOfBoundsException ex) {
+			logMessage("You do not have that much to sell!");
+		} catch (InvalidTradeException ex) {
+			logMessage(ex.getMessage());
+		}
 	}
 
 	public static void handleGameEvents() {
@@ -183,6 +214,7 @@ public class Run {
 				m = f.run();
 			}
 			logMessage(m.getMessage());
+//			stdin.close();
 		}
 	}
 
