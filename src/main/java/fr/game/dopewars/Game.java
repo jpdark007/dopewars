@@ -198,14 +198,17 @@ public final class Game implements TraderConstants {
 	}
 
 	public void printBoard() {
-		System.out.println(Game.DAYS_IN_GAME);
-		System.out.println(daysLeft());
-		System.out.println(player.getSpace());
-		System.out.println(player.spaceHeld());
+		System.out.println(getLocation());
 		System.out.println(player.getCashValue());
-		System.out.println(player.getMaxHealth());
-		System.out.println(player.getHealth());
-
-		System.out.println(player.getProducts());
+		System.out.println("Space : " + player.spaceHeld() + "/" + player.getSpace());
+		System.out.println("Health : " + player.getHealth() + "/" + player.getMaxHealth());
+		System.out.println("Days : "+ daysLeft() + "/" + Game.DAYS_IN_GAME);
+		System.out.println("Products : ");
+		for (Product product : getProducts()) {
+			System.out.print(product + " ");
+		}
+		System.out.println();
+		System.out.println("Stash : " + player.getProducts());
+		System.out.println(getMessages());
 	}
 }

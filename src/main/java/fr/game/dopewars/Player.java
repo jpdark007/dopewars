@@ -1,7 +1,12 @@
 package fr.game.dopewars;
 
-import fr.game.dopewars.exceptions.*;
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import fr.game.dopewars.exceptions.CannotAffordException;
+import fr.game.dopewars.exceptions.OutOfSpaceException;
+import fr.game.dopewars.exceptions.QuantityOutOfBoundsException;
 
 /**
  * Holds state for the player
@@ -23,7 +28,7 @@ public class Player implements TraderConstants, Fighter {
     space = STARTING_SPACE;
     strength = STARTING_STRENGTH;
     defense = STARTING_DEFENSE;
-    products = new HashMap<Product, Map<Long, Integer>>();
+    products = new LinkedHashMap<Product, Map<Long, Integer>>();
   }
 
   public int quantityForProduct(Product product, long price) {
