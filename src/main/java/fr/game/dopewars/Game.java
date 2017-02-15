@@ -200,10 +200,11 @@ public final class Game implements TraderConstants {
 
 	public void printBoard() {
 		System.out.println(getLocation());
-		System.out.println(player.getCashValue());
-		System.out.println("Space : " + player.spaceHeld() + "/" + player.getSpace());
-		System.out.println("Health : " + player.getHealth() + "/" + player.getMaxHealth());
-		System.out.println("Days : "+ daysLeft() + "/" + Game.DAYS_IN_GAME);
+		System.out.print(player.getCashValue());
+		System.out.print(" Space : " + player.spaceHeld() + "/" + player.getSpace());
+		System.out.print(" Health : " + player.getHealth() + "/" + player.getMaxHealth());
+		System.out.print(" Days : "+ daysLeft() + "/" + Game.DAYS_IN_GAME);
+		System.out.println();
 		System.out.println("Products : ");
 		for (Product product : getProducts()) {
 			System.out.print(product + " ");
@@ -216,11 +217,11 @@ public final class Game implements TraderConstants {
 	public void printStash() {
 		System.out.println("Stash : ");
 		Map<Product, Map<Long, Integer>> map = getPlayer().getProducts();
-
+		int i = 0;
 		for (Map.Entry<Product, Map<Long, Integer>> entry : map.entrySet()) {
 			Map<Long, Integer> stock = entry.getValue();
 			for (Entry<Long, Integer> oneProduct : stock.entrySet()) {
-				System.out.println(entry.getKey() + " Price :" + oneProduct.getKey() + "/ Quantity :" + oneProduct.getValue());
+				System.out.println( i++ + " / " + entry.getKey() + " Price :" + oneProduct.getKey() + "/ Quantity :" + oneProduct.getValue());
 			}
 		}
 	}
