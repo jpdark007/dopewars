@@ -32,11 +32,4 @@ public class PlayerTest {
 	public void testDefense() {
 		assertEquals(TraderConstants.STARTING_DEFENSE, player.getDefense());
 	}
-	
-	@Test
-	public void testAddCash() {
-		player.addCash(1);
-		long expected = (TraderConstants.STARTING_CASH + 1);
-		assertEquals(expected, player.getCash());
-	}
 }
