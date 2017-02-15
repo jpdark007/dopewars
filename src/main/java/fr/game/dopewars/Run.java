@@ -1,6 +1,9 @@
 package fr.game.dopewars;
 
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 
 import fr.game.dopewars.events.Event;
@@ -16,8 +19,8 @@ public class Run {
 
 	public static void main(String[] args) {
 
-		Scanner stdin = new Scanner(System.in);
 		while (true) {
+			Scanner stdin = new Scanner(System.in);
 			game.printBoard();
 			System.out.println("1 : Buy");
 			System.out.println("2 : Sell");
@@ -26,75 +29,12 @@ public class Run {
 			String userGuess = stdin.next();
 
 			if (userGuess.equals("1")) {
-				// BUY
-				System.out.println(Arrays.toString(game.getProducts()));
-				System.out.println("Product ? : ");
-				int productAsk = stdin.nextInt();
-				System.out.println("Quantity ? : ");
-				int quantityAsk = stdin.nextInt();
-
-				Product product = game.getProducts()[productAsk];
-				Trade trade = new Trade(product, product.getPrice());
-
-				trade.setMode(Trade.Mode.BUY);
-				trade.setMax(game.getPlayer().getMaxPurchase(product));
-
-				game.setCurrentTrade(trade);
-
-				int quantity = quantityAsk > trade.getMax() ? trade.getMax() : quantityAsk;
-				trade.setQuantity(quantity);
-				try {
-					trade.commit();
-
-					String logMsg = String.format("You bought %d \u00D7 %s at %s!", quantity,
-							trade.getProduct().getName(), Game.CURRENCY_FORMATTER.format(trade.getPrice()));
-					logMessage(logMsg);
-				} catch (OutOfSpaceException ex) {
-					logMessage("You cannot fit this many in your coat!");
-				} catch (CannotAffordException ex) {
-					logMessage("You cannot afford this many!");
-				} catch (QuantityOutOfBoundsException ex) {
-					logMessage("You do not have that much to sell!");
-				} catch (InvalidTradeException ex) {
-					logMessage(ex.getMessage());
-				}
+				buyProduct();
 			} else if (userGuess.equals("2")) {
-				// SELL
-				System.out.println("Stash : " + game.getPlayer().getProducts());
-				System.out.println("Product ? : ");
-				int productAsk = stdin.nextInt();
-				System.out.println("Quantity ? : ");
-				int quantityAsk = stdin.nextInt();
-				Product product = (Product) game.getPlayer().getProducts().values().toArray()[productAsk];
-
-				Trade trade = new Trade(product, product.getPrice());
-
-				trade.setMode(Trade.Mode.SELL);
-				trade.setMax(game.getPlayer().getMaxPurchase(product));
-				game.setCurrentTrade(trade);
-
-				int quantity = quantityAsk > trade.getMax() ? trade.getMax() : quantityAsk;
-
-				long price = trade.getPrice();
-				long salePrice = price * quantity;
-
-				long profit = (trade.getProduct().getPrice() - price) * quantity;
-				String logMsg = String.format("You sold %d \u00D7 %s for %s, making %s!", quantity,
-						trade.getProduct().getName(), Game.CURRENCY_FORMATTER.format(salePrice),
-						Game.CURRENCY_FORMATTER.format(profit));
-				logMessage(logMsg);
+				sellProduct();
 			} else if (userGuess.equals("3")) {
-				System.out.println(Arrays.toString(game.getLocations()));
-				int location = stdin.nextInt();
-				while (location > game.getLocations().length) {
-					location = stdin.nextInt();
-				}
-				Location l = game.getLocations()[location];
 				try {
-					if (game.moveTo(l)) {
-						logMessage(String.format("Day %d: Moved to %s", game.getDay(), l.getName()));
-						handleGameEvents();
-					}
+					moveToLocation();
 				} catch (GameOverException e) {
 					logMessage(e.getMessage());
 					break;
@@ -106,6 +46,89 @@ public class Run {
 				break;
 			}
 		}
+	}
+
+	private static void moveToLocation() throws GameOverException {
+		Scanner stdin = new Scanner(System.in);
+		System.out.println(Arrays.toString(game.getLocations()));
+		int location = stdin.nextInt();
+		while (location > game.getLocations().length) {
+			location = stdin.nextInt();
+		}
+		Location l = game.getLocations()[location];
+
+		if (game.moveTo(l)) {
+			logMessage(String.format("Day %d: Moved to %s", game.getDay(), l.getName()));
+			handleGameEvents();
+		}
+
+		stdin.close();
+	}
+
+	private static void buyProduct() {
+		// BUY
+		Scanner stdin = new Scanner(System.in);
+		System.out.println(Arrays.toString(game.getProducts()));
+		System.out.println("Product ? : ");
+		int productAsk = stdin.nextInt();
+		System.out.println("Quantity ? : ");
+		int quantityAsk = stdin.nextInt();
+
+		Product product = game.getProducts()[productAsk];
+		Trade trade = new Trade(product, product.getPrice());
+
+		trade.setMode(Trade.Mode.BUY);
+		trade.setMax(game.getPlayer().getMaxPurchase(product));
+
+		game.setCurrentTrade(trade);
+
+		int quantity = quantityAsk > trade.getMax() ? trade.getMax() : quantityAsk;
+		trade.setQuantity(quantity);
+		try {
+			trade.commit();
+
+			String logMsg = String.format("You bought %d \u00D7 %s at %s!", quantity, trade.getProduct().getName(),
+					Game.CURRENCY_FORMATTER.format(trade.getPrice()));
+			logMessage(logMsg);
+		} catch (OutOfSpaceException ex) {
+			logMessage("You cannot fit this many in your coat!");
+		} catch (CannotAffordException ex) {
+			logMessage("You cannot afford this many!");
+		} catch (QuantityOutOfBoundsException ex) {
+			logMessage("You do not have that much to sell!");
+		} catch (InvalidTradeException ex) {
+			logMessage(ex.getMessage());
+		}
+	}
+
+	private static void sellProduct() {
+		// SELL
+		Scanner stdin = new Scanner(System.in);
+		game.printStash();
+
+		System.out.println("Product ? : ");
+		int productAsk = stdin.nextInt();
+		System.out.println("Quantity ? : ");
+		int quantityAsk = stdin.nextInt();
+		Product product = (Product) game.getPlayer().getProducts().values().toArray()[productAsk];
+
+		Trade trade = new Trade(product, product.getPrice());
+
+		trade.setMode(Trade.Mode.SELL);
+		trade.setMax(game.getPlayer().getMaxPurchase(product));
+		game.setCurrentTrade(trade);
+
+		int quantity = quantityAsk > trade.getMax() ? trade.getMax() : quantityAsk;
+
+		long price = trade.getPrice();
+		long salePrice = price * quantity;
+
+		long profit = (trade.getProduct().getPrice() - price) * quantity;
+		String logMsg = String.format("You sold %d \u00D7 %s for %s, making %s!", quantity,
+				trade.getProduct().getName(), Game.CURRENCY_FORMATTER.format(salePrice),
+				Game.CURRENCY_FORMATTER.format(profit));
+		logMessage(logMsg);
+		stdin.close();
 	}
 
 	public static void handleGameEvents() {

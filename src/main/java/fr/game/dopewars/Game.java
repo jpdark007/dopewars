@@ -3,6 +3,7 @@ package fr.game.dopewars;
 import fr.game.dopewars.events.*;
 import fr.game.dopewars.exceptions.*;
 import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * Main dopewars game class. Holds state for the game
@@ -208,7 +209,19 @@ public final class Game implements TraderConstants {
 			System.out.print(product + " ");
 		}
 		System.out.println();
-		System.out.println("Stash : " + player.getProducts());
+		printStash();
 		System.out.println(getMessages());
+	}
+	
+	public void printStash() {
+		System.out.println("Stash : ");
+		Map<Product, Map<Long, Integer>> map = getPlayer().getProducts();
+
+		for (Map.Entry<Product, Map<Long, Integer>> entry : map.entrySet()) {
+			Map<Long, Integer> stock = entry.getValue();
+			for (Entry<Long, Integer> oneProduct : stock.entrySet()) {
+				System.out.println(entry.getKey() + " Price :" + oneProduct.getKey() + "/ Quantity :" + oneProduct.getValue());
+			}
+		}
 	}
 }
