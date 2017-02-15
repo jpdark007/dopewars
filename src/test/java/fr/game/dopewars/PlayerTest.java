@@ -36,6 +36,7 @@ public class PlayerTest {
 	@Test
 	public void testAddCash() {
 		player.addCash(TraderConstants.STARTING_CASH);
-		assertEquals(TraderConstants.STARTING_CASH + TraderConstants.STARTING_CASH, player.getCash());
+		long expected = (TraderConstants.STARTING_CASH + TraderConstants.STARTING_CASH);
+		assertEquals(expected, player.getCash());
 	}
 }
