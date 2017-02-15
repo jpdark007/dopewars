@@ -12,8 +12,12 @@ I tried to keep the tradewars package outside of swing where I could, so it can 
 
 Screenshots
 -----------
+* swing
 
-![Tradewars](https://cloud.githubusercontent.com/assets/16048491/22925344/9d5ab36c-f2a8-11e6-8487-aa629cc52bdb.PNG "TradeWars")
+![swing](https://cloud.githubusercontent.com/assets/16048491/22925344/9d5ab36c-f2a8-11e6-8487-aa629cc52bdb.PNG "TradeWars")
+* console
+
+![console](https://cloud.githubusercontent.com/assets/16048491/22975209/210f5482-f386-11e6-8fc3-4190889be030.PNG)
 
 Customization
 -------------
