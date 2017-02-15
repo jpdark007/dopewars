@@ -22,4 +22,20 @@ public class PlayerTest {
 	public void testHealth() {
 		assertEquals(TraderConstants.STARTING_HEALTH, player.getHealth());
 	}
+	
+	@Test
+	public void testSpace() {
+		assertEquals(TraderConstants.STARTING_SPACE, player.getSpace());
+	}
+	
+	@Test
+	public void testDefense() {
+		assertEquals(TraderConstants.STARTING_DEFENSE, player.getDefense());
+	}
+	
+	@Test
+	public void testAddCash() {
+		player.addCash(TraderConstants.STARTING_CASH);
+		assertEquals(TraderConstants.STARTING_CASH + TraderConstants.STARTING_CASH, player.getCash());
+	}
 }
