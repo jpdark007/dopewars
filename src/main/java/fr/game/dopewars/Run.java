@@ -1,8 +1,6 @@
 package fr.game.dopewars;
 
 import java.util.Arrays;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
@@ -43,7 +41,6 @@ public class Run {
 			} else if (userGuess.equals("0")) {
 				game.printBoard();
 			} else if (userGuess.equals("q")) {
-//				stdin.close();
 				break;
 			}
 		}
@@ -63,7 +60,6 @@ public class Run {
 			handleGameEvents();
 		}
 
-//		stdin.close();
 	}
 
 	private static void buyProduct() {
@@ -102,7 +98,6 @@ public class Run {
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	private static void sellProduct() {
 		// SELL
 		Scanner stdin = new Scanner(System.in);
@@ -144,6 +139,10 @@ public class Run {
 			trade.commit();
 
 			long price = trade.getPrice();
+			//Manage with product found on the floor
+			if (0 == price) {
+				price = product.getPrice();
+			}
 			long salePrice = price * quantityAsk;
 			long profit = (trade.getProduct().getPrice() - price) * quantityAsk;
 			
@@ -214,7 +213,6 @@ public class Run {
 				m = f.run();
 			}
 			logMessage(m.getMessage());
-//			stdin.close();
 		}
 	}
 
