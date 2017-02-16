@@ -1,0 +1,42 @@
+<Npc-array>
+  <Npc>
+    <name>Street Thug</name>
+    <health>20</health>
+    <maxHealth>20</maxHealth>
+    <strength>20</strength>
+    <defense>5</defense>
+    <low>2000</low>
+    <high>5000</high>
+    <level>1</level>
+  </Npc>
+  <Npc>
+    <name>Officer Hardass</name>
+    <health>50</health>
+    <maxHealth>50</maxHealth>
+    <strength>25</strength>
+    <defense>0</defense>
+    <low>10000</low>
+    <high>20000</high>
+    <level>1</level>
+  </Npc>
+  <Npc>
+    <name>Rival Dealer</name>
+    <health>80</health>
+    <maxHealth>80</maxHealth>
+    <strength>25</strength>
+    <defense>2</defense>
+    <low>50000</low>
+    <high>75000</high>
+    <level>2</level>
+  </Npc>
+  <Npc>
+    <name>Robocop</name>
+    <health>300</health>
+    <maxHealth>300</maxHealth>
+    <strength>40</strength>
+    <defense>0</defense>
+    <low>160000</low>
+    <high>250000</high>
+    <level>3</level>
+  </Npc>
+</Npc-array>

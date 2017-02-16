@@ -1,0 +1,19 @@
+<java.util.Arrays_-ArrayList>
+  <a class="Location-array">
+    <Location>
+      <name>Coney Island</name>
+    </Location>
+    <Location>
+      <name>Manhattan</name>
+    </Location>
+    <Location>
+      <name>The Bronz</name>
+    </Location>
+    <Location>
+      <name>SoHo</name>
+    </Location>
+    <Location>
+      <name>The Village</name>
+    </Location>
+  </a>
+</java.util.Arrays_-ArrayList>
