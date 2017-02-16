@@ -7,8 +7,6 @@ Java Tradewars
 
 Java Tradewars is a generic dopewars-like engine that can be easily re-themed using xml configuration files.
 
-I tried to keep the tradewars package outside of swing where I could, so it can be easily adapted to a console game if you wanted. 
-
 Screenshots
 -----------
 * swing
